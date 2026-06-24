@@ -185,3 +185,34 @@
     }
   }
 }
+
+@keyframes brand-carousel {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.brand-carousel {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 9%, black 91%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 9%, black 91%, transparent);
+}
+
+.brand-carousel-track {
+  min-width: max-content;
+  animation: brand-carousel 36s linear infinite;
+  will-change: transform;
+}
+
+.brand-carousel:hover .brand-carousel-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-carousel-track {
+    animation-duration: 45s;
+  }
+}

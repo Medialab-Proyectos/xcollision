@@ -2,22 +2,16 @@ import { Star, Quote } from "lucide-react"
 
 const REVIEWS = [
   {
-    name: "Maria G.",
-    location: "Carrollton, TX",
-    quote:
-      "After a bad accident I was so stressed about insurance. Xtreme Collision handled everything with my adjuster and my car looks brand new. Couldn't recommend them more.",
+    title: "Body & paintwork",
+    quote: "Work was excellent on a rear bumper paint job for a mint E39.",
   },
   {
-    name: "James R.",
-    location: "Plano, TX",
-    quote:
-      "Hail destroyed my hood and they fixed it like it never happened. Fast, professional, and they set me up with a rental the same day. Five stars all the way.",
+    title: "F-150 repair",
+    quote: "They did an awesome job on an F-150 and helped through the full process.",
   },
   {
-    name: "Denise T.",
-    location: "Addison, TX",
-    quote:
-      "The team kept me updated through the whole repair. The paint match is flawless and the lifetime warranty gave me real peace of mind. These folks know their craft.",
+    title: "GM owner experience",
+    quote: "The repair followed GM standards, used OEM parts, and the process was smooth.",
   },
 ]
 
@@ -32,7 +26,7 @@ export function Testimonials() {
             ))}
           </div>
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Rated 5.0 by Our Customers
+            5-Star Google Reviews 2025
           </p>
           <h2
             id="reviews-heading"
@@ -43,9 +37,9 @@ export function Testimonials() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {REVIEWS.map(({ name, location, quote }) => (
+          {REVIEWS.map(({ title, quote }) => (
             <figure
-              key={name}
+              key={title}
               className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm"
             >
               <Quote className="mb-4 h-8 w-8 text-accent" aria-hidden="true" />
@@ -54,11 +48,14 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-accent">
-                  {name.charAt(0)}
+                  5
                 </span>
-                <span>
-                  <span className="block font-semibold text-primary">{name}</span>
-                  <span className="block text-sm text-muted-foreground">{location}</span>
+                <span className="flex-1">
+                  <span className="block font-semibold text-primary">{title}</span>
+                  <span className="block text-sm text-muted-foreground">Google Review 2025</span>
+                </span>
+                <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+                  Google
                 </span>
               </figcaption>
             </figure>

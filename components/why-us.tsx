@@ -55,8 +55,8 @@ export function WhyUs() {
 
         <div className="relative order-first aspect-[4/5] overflow-hidden rounded-2xl shadow-xl lg:order-last">
           <Image
-            src="/images/technician.png"
-            alt="Factory-trained technician inspecting a freshly repaired vehicle panel"
+            src="/images/real-auto-color-paint-match.jpg"
+            alt="Technician checking auto paint color matching during collision repair"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

@@ -1,30 +1,14 @@
-import {
-  siAcura,
-  siChevrolet,
-  siFord,
-  siGeneralmotors,
-  siHonda,
-  siHyundai,
-  siInfiniti,
-  siJeep,
-  siKia,
-  siNissan,
-  siSubaru,
-  type SimpleIcon,
-} from "simple-icons"
+import Image from "next/image"
 
-const BRAND_LOGOS = [
-  { name: "Ford", detail: "Authorized", icon: siFord },
-  { name: "General Motors", detail: "Certified", icon: siGeneralmotors },
-  { name: "Chevrolet", detail: "OEM Standards", icon: siChevrolet },
-  { name: "Honda", detail: "Certified", icon: siHonda },
-  { name: "Acura", detail: "Certified", icon: siAcura },
-  { name: "INFINITI", detail: "Certified Repair", icon: siInfiniti },
-  { name: "Hyundai", detail: "Factory Trained", icon: siHyundai },
-  { name: "Jeep", detail: "OEM Standards", icon: siJeep },
-  { name: "Kia", detail: "Factory Trained", icon: siKia },
-  { name: "Nissan", detail: "OEM Standards", icon: siNissan },
-  { name: "Subaru", detail: "Factory Trained", icon: siSubaru },
+const CERTIFICATIONS = [
+  { name: "Ford Certified Collision Center", src: "/images/cert-ford.png" },
+  { name: "Honda Acura ProFirst Certified Collision Center", src: "/images/cert-honda-acura.jpg" },
+  { name: "Infiniti Certified Collision Center", src: "/images/cert-infiniti.jpg" },
+  { name: "Kia Certified Collision Center", src: "/images/cert-kia.png" },
+  { name: "Hyundai Certified Collision Center", src: "/images/cert-hyundai.png" },
+  { name: "Nissan Certified Collision Repair", src: "/images/cert-nissan.png" },
+  { name: "Subaru Certified Collision Center", src: "/images/cert-subaru.jpg" },
+  { name: "Jeep Certified Collision Center", src: "/images/cert-jeep.png" },
 ] as const
 
 const CERT_BADGES = [
@@ -32,20 +16,7 @@ const CERT_BADGES = [
   { name: "ASE", detail: "Certified Techs", accent: "text-blue-700" },
 ] as const
 
-const CAROUSEL_ITEMS = [...CERT_BADGES, ...BRAND_LOGOS]
-
-function SimpleBrandLogo({ icon, className = "h-7 w-auto" }: { icon: SimpleIcon; className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={className}
-      fill={`#${icon.hex}`}
-    >
-      <path d={icon.path} />
-    </svg>
-  )
-}
+const CAROUSEL_ITEMS = [...CERT_BADGES, ...CERTIFICATIONS]
 
 export function TrustStrip() {
   return (
@@ -63,16 +34,24 @@ export function TrustStrip() {
               key={`${item.name}-${index}`}
               className="flex h-32 w-56 shrink-0 flex-col items-center justify-center gap-3 rounded-lg bg-white px-6 shadow-sm ring-1 ring-border sm:h-36 sm:w-64"
             >
-              {"icon" in item ? (
-                <SimpleBrandLogo icon={item.icon} className="h-14 w-auto max-w-40 sm:h-16 sm:max-w-44" />
+              {"src" in item ? (
+                <Image
+                  src={item.src}
+                  alt={item.name}
+                  width={220}
+                  height={92}
+                  className="max-h-24 w-auto object-contain"
+                />
               ) : (
                 <span className={`font-heading text-4xl font-bold uppercase ${item.accent}`}>
                   {item.name}
                 </span>
               )}
-              <span className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                {item.detail}
-              </span>
+              {"detail" in item ? (
+                <span className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  {item.detail}
+                </span>
+              ) : null}
             </div>
           ))}
         </div>

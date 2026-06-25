@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden">
       <Image
-        src="/images/hero-shop.png"
-        alt="Pristine vehicle inside the Xtreme Collision auto body repair facility"
+        src="/images/real-car-repair-carrollton.jpg"
+        alt="Collision-damaged vehicle representing Xtreme Collision repair services in Carrollton"
         fill
         priority
         className="-z-10 object-cover object-center"

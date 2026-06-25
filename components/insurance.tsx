@@ -2,15 +2,15 @@ import Image from "next/image"
 import { Check } from "lucide-react"
 
 const INSURERS = [
-  "State Farm",
-  "GEICO",
-  "Progressive",
-  "Allstate",
-  "USAA",
-  "Farmers",
-  "Liberty Mutual",
-  "Nationwide",
-]
+  { name: "State Farm", className: "bg-red-600 text-white" },
+  { name: "GEICO", className: "bg-blue-700 text-white" },
+  { name: "Progressive", className: "bg-sky-600 text-white" },
+  { name: "Allstate", className: "bg-blue-900 text-white" },
+  { name: "USAA", className: "bg-slate-800 text-white" },
+  { name: "Farmers", className: "bg-red-700 text-white" },
+  { name: "Liberty Mutual", className: "bg-yellow-400 text-primary" },
+  { name: "Nationwide", className: "bg-blue-800 text-white" },
+] as const
 
 const COVERED = [
   "We work directly with your insurance adjuster",
@@ -27,8 +27,8 @@ export function Insurance() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
           <Image
-            src="/images/insurance.png"
-            alt="Xtreme Collision advisor helping a customer with their insurance claim"
+            src="/images/real-insurance-claims.jpg"
+            alt="Insurance paperwork and vehicle keys for an auto collision claim"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -63,11 +63,11 @@ export function Insurance() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/60">
               A few of the providers we partner with
             </p>
-            <div className="flex flex-wrap gap-2">
-              {INSURERS.map((name) => (
+            <div className="flex flex-wrap gap-2.5">
+              {INSURERS.map(({ name, className }) => (
                 <span
                   key={name}
-                  className="rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-3 py-1.5 text-sm font-medium text-primary-foreground/90"
+                  className={`inline-flex h-8 items-center rounded px-3 font-heading text-xs font-bold uppercase tracking-wide shadow-sm ring-1 ring-white/20 ${className}`}
                 >
                   {name}
                 </span>

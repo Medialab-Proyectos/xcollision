@@ -27,8 +27,8 @@ export function Insurance() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
           <Image
-            src="/images/real-insurance-claims.jpg"
-            alt="Insurance paperwork and vehicle keys for an auto collision claim"
+            src="/images/collision-repair-technician-carrollton.webp"
+            alt="Xtreme Collision technician removing a vehicle door for a certified collision repair in Carrollton"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

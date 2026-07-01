@@ -20,9 +20,9 @@ const jsonLd = {
   name: SITE.name,
   url: SITE.url,
   image: [
-    `${SITE.url}/images/real-car-repair-carrollton.jpg`,
-    `${SITE.url}/images/real-shop-floor.jpg`,
-    `${SITE.url}/images/xtreme-collision-repairs.png`,
+    `${SITE.url}/images/paintless-dent-repair-carrollton.webp`,
+    `${SITE.url}/images/auto-body-panel-refinishing-carrollton.webp`,
+    `${SITE.url}/images/collision-repair-technician-carrollton.webp`,
   ],
   logo: `${SITE.url}/images/xtreme-logo.png`,
   description: SITE.description,

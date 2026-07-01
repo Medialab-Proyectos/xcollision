@@ -62,6 +62,15 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col items-start">
+          <div className="relative mb-5 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg ring-1 ring-primary-foreground/15">
+            <Image
+              src="/images/ChatGPT Image Jul 1, 2026, 03_49_35 PM.png"
+              alt={`${SITE.name} auto body and collision repair shop location in ${SITE.city}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </div>
           <h3 className="font-heading text-lg font-semibold uppercase tracking-tight">
             Ready to get started?
           </h3>

@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden">
       <Image
-        src="/images/real-car-repair-carrollton.jpg"
-        alt="Collision-damaged vehicle representing Xtreme Collision repair services in Carrollton"
+        src="/images/paintless-dent-repair-carrollton.webp"
+        alt="Xtreme Collision technician performing paintless dent repair on a vehicle roof in Carrollton"
         fill
         priority
         className="-z-10 object-cover object-center"

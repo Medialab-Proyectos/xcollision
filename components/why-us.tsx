@@ -55,8 +55,8 @@ export function WhyUs() {
 
         <div className="relative order-first aspect-[4/3] overflow-hidden rounded-2xl shadow-xl lg:order-last">
           <Image
-            src="/images/real-shop-floor.jpg"
-            alt="Auto body repair floor with vehicles on lifts inside a collision repair shop"
+            src="/images/auto-body-panel-refinishing-carrollton.webp"
+            alt="Xtreme Collision technician refinishing a body panel under professional reflector lighting in our modern facility"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

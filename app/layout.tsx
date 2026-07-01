@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: '/images/real-car-repair-carrollton.jpg',
-        width: 2121,
-        height: 1414,
-        alt: 'Damaged vehicle representing collision repair services in Carrollton, TX',
+        url: '/images/paintless-dent-repair-carrollton.webp',
+        width: 758,
+        height: 500,
+        alt: 'Xtreme Collision technician performing paintless dent repair in Carrollton, TX',
       },
     ],
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE.title,
     description: SITE.description,
-    images: ['/images/real-car-repair-carrollton.jpg'],
+    images: ['/images/paintless-dent-repair-carrollton.webp'],
   },
   robots: {
     index: true,

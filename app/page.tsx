@@ -11,10 +11,73 @@ import { FinalCta } from "@/components/final-cta"
 import { AppointmentForm } from "@/components/appointment-form"
 import { SiteFooter } from "@/components/site-footer"
 import { StickyCallBanner } from "@/components/sticky-call-banner"
+import { SITE } from "@/lib/site"
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["AutoRepair", "LocalBusiness"],
+  "@id": `${SITE.url}/#business`,
+  name: SITE.name,
+  url: SITE.url,
+  image: [
+    `${SITE.url}/images/real-car-repair-carrollton.jpg`,
+    `${SITE.url}/images/real-shop-floor.jpg`,
+    `${SITE.url}/images/xtreme-collision-repairs.png`,
+  ],
+  logo: `${SITE.url}/images/xtreme-logo.png`,
+  description: SITE.description,
+  telephone: SITE.phone,
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2025 Midway Road, Suite E",
+    addressLocality: SITE.city,
+    addressRegion: SITE.region,
+    postalCode: SITE.postalCode,
+    addressCountry: SITE.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.coordinates.latitude,
+    longitude: SITE.coordinates.longitude,
+  },
+  areaServed: SITE.areas.split(", ").map((area) => ({
+    "@type": "City",
+    name: area,
+  })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      opens: "08:00",
+      closes: "17:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "08:00",
+      closes: "12:00",
+    },
+  ],
+  makesOffer: SITE.services.map((service) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: service,
+      serviceType: service,
+      areaServed: SITE.areas,
+    },
+  })),
+  sameAs: SITE.socials.map(({ href }) => href),
+}
 
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="pb-16 md:pb-0">
         {/* Attention */}

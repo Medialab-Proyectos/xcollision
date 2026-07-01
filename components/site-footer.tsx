@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Phone, MapPin, Clock } from "lucide-react"
+import { Phone, MapPin, Clock, ExternalLink } from "lucide-react"
 import { SITE } from "@/lib/site"
 
 export function SiteFooter() {
@@ -17,8 +17,25 @@ export function SiteFooter() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
             5-star auto body &amp; collision repair serving {SITE.areas} and surrounding areas.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {SITE.socials.map(({ name, href }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-primary-foreground/20 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-primary-foreground/80 transition-colors hover:border-accent hover:text-accent"
+              >
+                {name}
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
           <div className="mt-5 space-y-3 text-sm">
-            <a href={SITE.phoneHref} className="flex items-center gap-2 transition-colors hover:text-accent">
+            <a
+              href={SITE.phoneHref}
+              className="flex items-center gap-2 transition-colors hover:text-accent"
+            >
               <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
               {SITE.phone}
             </a>
@@ -62,7 +79,7 @@ export function SiteFooter() {
 
       <div className="border-t border-primary-foreground/15">
         <p className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-primary-foreground/60">
-          © {new Date().getFullYear()} {SITE.name}. All Rights Reserved.
+          &copy; {new Date().getFullYear()} {SITE.name}. All Rights Reserved.
         </p>
       </div>
     </footer>
